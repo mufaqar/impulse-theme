@@ -1,3 +1,4 @@
+{% include 'hidden-collections.search.setup' %}
 <div class="search-content" data-section-id="{{ section.id }}" data-section-type="collection-grid">
   <div class="page-width page-content">
     {%- render 'breadcrumbs' -%}
@@ -14,17 +15,18 @@
       <hr class="hr--medium">
 
       <div class="section-header">
-        {%- if search.results_count == 0 -%}
+        {%- if search_results_count == 0 -%}
           <p>
             {{ 'general.search.no_results_html' | t: terms: search.terms | replace: '*', '' }}
           </p>
         {%- endif -%}
       </div>
 
-      {%- if search.results_count != 0 -%}
+      {%- if search_results_count != 0 -%}
 
         {%- assign paginate_by = section.settings.per_row | times: section.settings.rows_per_page -%}
         {%- paginate search.results by paginate_by -%}
+{% include 'hidden-collections.search.setup' %}
 
         <div id="CollectionAjaxContent" class="grid grid--uniform" data-scroll-to>
 

@@ -42,7 +42,7 @@
       {%- section 'giftcard-header' -%}
 
       <main class="giftcard" role="main">
-        {{ content_for_layout }}
+        {% comment %} Managed by Hidden Collections app - Do not modify line. {% endcomment %} {% capture hidden_page_unless_authorized %} {{ content_for_layout }} {% endcapture %}{% include 'hidden-collections.require-authorization' %}
       </main>
 
       <footer class="giftcard__footer">

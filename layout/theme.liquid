@@ -107,7 +107,7 @@
     {%- sections 'popup-group' -%}
 
       <main class="main-content" id="MainContent">
-        {{ content_for_layout }}
+        {% comment %} Managed by Hidden Collections app - Do not modify line. {% endcomment %} {% capture hidden_page_unless_authorized %} {{ content_for_layout }} {% endcapture %}{% include 'hidden-collections.require-authorization' %}
       </main>
 
     {%- sections 'footer-group' -%}
